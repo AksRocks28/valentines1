@@ -1,20 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="home-content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Floating teddies -->
+  <div class="teddies">
+    <span class="teddy"
+          *ngFor="let teddy of teddies"
+          [ngStyle]="{'left.%': teddy.left, 'animation-duration.s': teddy.duration}">
+      🧸
+    </span>
   </div>
+
+  <div class="home-layout">
+    
+    <!-- LEFT SIDE: Image -->
+    <div class="left-side">
+      <img src="/assets/rose.jpg" class="bg-image" />
+    </div>
+
+    <!-- RIGHT SIDE: Buttons -->
+    <div class="right-side">
+     
+
+      <ion-button class="glass-btn" (click)="spawnTeddy()">
+        Surprise
+      </ion-button>
+
+      <ion-button class="glass-btn" (click)="openModal()">
+        Open Valentine Surprise 💖
+      </ion-button>
+      
+     
+      <div class="footer-text">
+        Designed and Developed by Aks
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+
+  
 </ion-content>

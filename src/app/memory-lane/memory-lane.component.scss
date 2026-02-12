@@ -1,0 +1,84 @@
+.memory-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #FFE6F0, #FFD1E0);
+    overflow: hidden;
+  }
+  
+  
+  /* Girl - show left half of image */
+  .girl {
+    position: absolute;
+    bottom: 50px;
+    left: -100px;
+    width: 80px;
+    object-fit: cover;
+  
+    /* Clip to left half */
+    clip-path: inset(0 50% 0 0);
+  
+    animation: girlMove 4s forwards;
+    z-index: 2;
+  }
+  
+  /* Boy - show right half of image */
+  .boy {
+    position: absolute;
+    bottom: 50px;
+    right: -100px;
+    width: 80px;
+    object-fit: cover;
+  
+    /* Clip to right half */
+    clip-path: inset(0 0 0 50%);
+  
+    animation: boyMove 4s forwards;
+    z-index: 2;
+  }
+  
+  /* Prompt button */
+  .prompt-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #E6E6FA, #FFB6C1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Valentine message */
+  .valentine-msg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    color: #ff2e63;
+    text-align: center;
+    animation: fadeIn 1s forwards;
+  }
+  
+  /* Animations */
+  @keyframes girlMove {
+    0% { left: -100px; bottom: 50px; }
+    50% { left: 50%; transform: translateX(-100%); bottom: 50px; }
+    100% { left: 50%; transform: translateX(-100%) translateY(-150px); bottom: 50px; }
+  }
+  
+  @keyframes boyMove {
+    0% { right: -100px; bottom: 50px; }
+    50% { right: 50%; transform: translateX(100%); bottom: 50px; }
+    100% { right: 50%; transform: translateX(100%) translateY(-150px); bottom: 50px; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

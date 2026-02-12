@@ -1,16 +1,29 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
-import { AppComponent } from './app.component';
+import { IonicModule } from '@ionic/angular'; // ✅ Needed for Ionic components
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+
+
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  declarations: [
+    AppComponent
+    // If you have HomePage component, add it here
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(), // ✅ This registers all Ionic components
+    AppRoutingModule
+  ],
+  providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // ✅ This suppresses unknown element errors
 })
 export class AppModule {}
+
+
+

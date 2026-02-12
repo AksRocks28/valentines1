@@ -1,0 +1,26 @@
+// valentine-theme.scss
+
+// Base colors
+$valentine-pink: #ff69b4;
+$valentine-light-pink: #ffe4f0;
+$valentine-white: #ffffff;
+
+// Ionic color overrides
+:root {
+  --ion-color-primary: #ff69b4;           // Main pink
+  --ion-color-primary-rgb: 255,105,180;
+  --ion-color-primary-contrast: #ffffff;  // Text on primary
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #e55cae;
+  --ion-color-primary-tint: #ff7ccf;
+
+  --ion-color-secondary: #ffe4f0;          // Light pink
+  --ion-color-secondary-rgb: 255,228,240;
+  --ion-color-secondary-contrast: #ff69b4;
+  --ion-color-secondary-contrast-rgb: 255,105,180;
+  --ion-color-secondary-shade: #e3c4d4;
+  --ion-color-secondary-tint: #ffccde;
+
+  --ion-color-tertiary: #ffffff;           // White
+  --ion-color-tertiary-contrast: #ff69b4;
+}

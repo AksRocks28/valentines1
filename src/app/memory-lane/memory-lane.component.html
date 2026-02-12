@@ -1,0 +1,18 @@
+<div class="memory-bg">
+
+  <!-- Girl (left half) -->
+  <img src="/assets/couple.jpg" class="girl" />
+
+  <!-- Boy (right half) -->
+  <img src="/assets/couple.jpg" class="boy" />
+
+  <!-- Prompt button -->
+  <ion-button *ngIf="showPrompt" class="prompt-btn" (click)="playMusic()">
+    Click me!
+  </ion-button>
+
+  <!-- Valentine message -->
+  <div *ngIf="showValentine" class="valentine-msg">
+    💖 Happy Valentine’s Day! 💖
+  </div>
+</div>

@@ -1,27 +1,163 @@
-#container {
+.home-content {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.home-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* =========================
+   LEFT SIDE (IMAGE)
+========================= */
+.left-side {
+  flex: 1;
+  overflow: hidden;
+}
+
+.left-side .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   RIGHT SIDE (IMAGE + DARK PINK OVERLAY)
+========================= */
+.right-side {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 5;
+}
+
+/* Dark pink overlay */
+.right-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(194, 24, 91, 0.85); /* DARK PINK OVERLAY */
+  z-index: 0;
+}
+
+/* Make buttons appear above overlay */
+.right-side > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   GLASS BUTTONS
+========================= */
+.glass-btn {
+  --background: #ffb6c1; /* baby pink */
+  --color: crimson;      /* dark pink text */
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  font-weight: 600;
+
+  width: 50%;        /* base width for desktop */
+  max-width: 90%;      /* responsive on smaller screens */
+  min-width: 150px;    /* ensures buttons don’t get too small */
   text-align: center;
 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.glass-btn:active {
+  transform: scale(0.97); /* subtle press effect */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .glass-btn {
+    width: 80%;          /* buttons fill more space on mobile */
+    min-width: auto;     /* allow scaling with screen */
+  }
+}
+
+.footer-text {
+  position: absolute;      /* fix position */
+  bottom: 10px;            /* 10px from bottom */
+  right: 10px;             /* 10px from right */
+  font-size: 0.7rem;       /* small size */
+  color: #ffe4ec;          /* soft pink */
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  z-index: 20;             /* above other content */
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+
+
+
+/* =========================
+   FLOATING TEDDIES
+========================= */
+.teddies {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.teddy {
+  position: absolute;
+  bottom: 0;
+  font-size: 3rem;
+  animation: floatTeddy linear infinite;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+@keyframes floatTeddy {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70vh);
+    opacity: 0;
+  }
 }
 
-#container a {
-  text-decoration: none;
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .home-layout {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    height: 50%;
+  }
+
+  .glass-btn {
+    width: 80%;
+  }
 }

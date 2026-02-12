@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+
+.modal-wrapper img {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.modal-wrapper h1 {
+  color: #ff4f8b;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.modal-wrapper {
+  text-align: center;
+  padding-top:30px;
+  border-radius: 25px;       
+  width: 90%;                 
+  height: 94%;                
+  margin: auto;               
+  background: #ffe4ec;       
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
+}
+
+ion-content {
+  --background: #c2185b;  /* dark purple */
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  border-radius: 25px; 
+}
